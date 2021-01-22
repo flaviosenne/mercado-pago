@@ -10,6 +10,7 @@ routes.get('/', (req, res) => {
 })
 
 routes.get('/pagar', pagamento.Pagar)
+
 routes.post('/notificacao', (req, res) => {
     console.log(req.query)
     res.send('OK')
