@@ -36,12 +36,11 @@ class Pagamento {
         // confirmar pagamento no banco de dados do mercadopago
         
         setTimeout(() => {
-    
-            var filter = {
-                "order.id":id
-            }
-    
+        
             try{
+                var filter = {
+                    "order.id":id
+                }
                 const data = await mercadopago.payment.search({qs:filter})
 
                 console.log(data)
