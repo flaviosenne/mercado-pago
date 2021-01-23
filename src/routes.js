@@ -1,6 +1,6 @@
 import {Router } from 'express'
 
-import pagamento from './controllers/pagamento'
+import payment from './controllers/pagamento'
 
 const routes = Router()
 
@@ -9,11 +9,7 @@ routes.get('/', (req, res) => {
     res.send('oi')
 })
 
-routes.get('/pagar', pagamento.Pagar)
+routes.get('/pagar', payment.Pagar)
 
-routes.post('/notificacao', (req, res) => {
-    console.log(req.query)
-    res.send('OK')
-})
-
+routes.post('/notificacao', payment.Notification)
 export default routes
