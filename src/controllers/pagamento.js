@@ -35,7 +35,7 @@ class Pagamento {
         const id = req.query.id
         // confirmar pagamento no banco de dados do mercadopago
         
-        setTimeout(() => {
+        setTimeout(async () => {
         
             try{
                 var filter = {
