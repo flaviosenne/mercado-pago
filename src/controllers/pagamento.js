@@ -43,9 +43,14 @@ class Pagamento {
                 }
                 const data = await mercadopago.payment.search({qs:filter})
 
-                console.log(data)
+                const pay = data.body.results[0]
+                if(pay){
+                    console.log('already payment')
+                    return res.send('already payment')
+                }
+                console.log('already payment')
+                return res.send('not found payment')
                 
-                res.send('OK')
             }catch(err) {
                 console.log(err)
             }
