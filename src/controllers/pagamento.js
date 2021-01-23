@@ -45,10 +45,12 @@ class Pagamento {
 
                 const pay = data.body.results[0]
                 if(pay){
-                    console.log('already payment')
+                    console.log('already paid')
+                    console.log(pay.external_reference)
+                    console.log(pay.status) // approved
                     return res.send('already payment')
                 }
-                console.log('already payment')
+                
                 return res.send('not found payment')
                 
             }catch(err) {
